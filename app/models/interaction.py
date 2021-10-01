@@ -6,6 +6,7 @@ class Interaction(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    content_id = db.Column(db.Integer, db.ForeignKey("contents.id"), nullable=False)
     created_at = db.Column(
         db.DateTime(), default=datetime.datetime.now(), nullable=False)
     duration = db.Column(db.DateTime(), nullable=False)
